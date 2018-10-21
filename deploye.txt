@@ -1,0 +1,9 @@
+ng build --prod -bh=/
+cd dist
+git init
+git add *.*
+git commit -m"0.0.4"
+git remote add origin https://ahad-dev-app-admin@ahad-dev-app.scm.azurewebsites.net:443/ahad-dev-app.git
+git push origin master -f
+
+

@@ -1,18 +1,22 @@
-﻿/* 
-*  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. 
-*  See LICENSE in the source repository root for complete license information. 
+﻿
+/*
+*  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+*  See LICENSE in the source repository root for complete license information.
 */
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/observable/fromPromise';
+import { Observable, Subject, ReplaySubject, of, range } from 'rxjs';
+import { fromPromise } from 'rxjs/observable/fromPromise';
+import { from } from 'rxjs';
 import * as MicrosoftGraph from "@microsoft/microsoft-graph-types"
 import * as MicrosoftGraphClient from "@microsoft/microsoft-graph-client"
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 
 import { HttpService } from '../shared/http.service';
+
+
 
 @Injectable()
 export class HomeService {
@@ -38,11 +42,14 @@ export class HomeService {
   getMe(): Observable<MicrosoftGraph.User>
   {
     var client = this.getClient();
-    return Observable.fromPromise(client
+
+    return from(client
     .api('me')
     .select("displayName, mail, userPrincipalName")
     .get()
     .then ((res => {
+      console.log(res);
+
       return res;
     } ) )
     );
@@ -50,11 +57,11 @@ export class HomeService {
 
   sendMail(mail: MicrosoftGraph.Message) {
     var client = this.getClient();
-    return Observable.fromPromise(client
+    return from(client
     .api('me/sendmail')
     .post({message: mail})
   );
-  } 
+  }
 
 
 }

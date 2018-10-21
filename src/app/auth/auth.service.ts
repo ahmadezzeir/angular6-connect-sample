@@ -1,12 +1,12 @@
-/* 
-*  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. 
-*  See LICENSE in the source repository root for complete license information. 
+/*
+*  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+*  See LICENSE in the source repository root for complete license information.
 */
 
-// This sample uses an open source OAuth 2.0 library that is compatible with the Azure AD v2.0 endpoint. 
-// Microsoft does not provide fixes or direct support for this library. 
-// Refer to the library’s repository to file issues or for other support. 
-// For more information about auth libraries see: https://azure.microsoft.com/documentation/articles/active-directory-v2-libraries/ 
+// This sample uses an open source OAuth 2.0 library that is compatible with the Azure AD v2.0 endpoint.
+// Microsoft does not provide fixes or direct support for this library.
+// Refer to the library’s repository to file issues or for other support.
+// For more information about auth libraries see: https://azure.microsoft.com/documentation/articles/active-directory-v2-libraries/
 // Library repo: https://github.com/MrSwitch/hello.js
 
 import { Injectable, NgZone } from '@angular/core';
@@ -28,7 +28,7 @@ export class AuthService {
           id: Configs.appId,
           oauth: {
             version: 2,
-            auth: 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize'
+            auth: 'https://login.microsoftonline.com/7898ec1e-ac46-4031-83ab-3849bb2f5081/oauth2/v2.0/authorize'
           },
           scope_delim: ' ',
           form: false

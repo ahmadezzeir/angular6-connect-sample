@@ -1,9 +1,9 @@
-/* 
-*  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. 
-*  See LICENSE in the source repository root for complete license information. 
+/*
+*  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+*  See LICENSE in the source repository root for complete license information.
 */
 
 export const Configs = {
-  appId: 'ENTER_YOUR_CLIENT_ID',
+  appId: '0ae7d401-2c0b-40bc-9cd1-5ff11ff74102',
   scope: 'User.Read Mail.Send'
 };
