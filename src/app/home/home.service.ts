@@ -13,7 +13,7 @@ import * as MicrosoftGraph from "@microsoft/microsoft-graph-types"
 import * as MicrosoftGraphClient from "@microsoft/microsoft-graph-client"
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-
+import fs from 'streamsaver';
 import { HttpService } from '../shared/http.service';
 
 
@@ -45,13 +45,51 @@ export class HomeService {
 
     return from(client
     .api('me')
+
     .select("displayName, mail, userPrincipalName")
     .get()
+     .then ((res => {
+       //console.log(res);
+
+       return res;
+     } ) )
+    );
+  }
+
+  getMyManager(): Observable<MicrosoftGraph.User>
+  {
+    var client = this.getClient();
+
+    return from(client
+    .api('me/manager')
+    .select("")
+    .get()
     .then ((res => {
-      console.log(res);
+      //console.log(res);
 
       return res;
     } ) )
+    );
+  }
+
+  getPhoto(): Observable<Blob>
+  {
+    var client = this.getClient();
+
+    return from(client
+    .api('me/photo/$value')
+    .responseType('blob')
+  //   .getStream((err, downloadStream) => {
+  //     let writeStream = fs.createWriteStream('myPhoto.jpg');
+  //     downloadStream.pipe(writeStream).on('aaaaaaaaaaaaaaaa', err);
+  // })
+     .select("")
+     .get()
+     .then ((res => {
+       //console.log(res);
+
+       return res;
+     } ) )
     );
   }
 
