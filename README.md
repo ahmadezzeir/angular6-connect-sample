@@ -1,4 +1,4 @@
-# Microsoft Graph Connect Sample for Angular 4
+# Microsoft Graph Connect Sample for Angular 6
 
 ## Table of contents
 
