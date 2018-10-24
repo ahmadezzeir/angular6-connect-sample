@@ -4,6 +4,6 @@
 */
 
 export const Configs = {
-  appId: '0ae7d401-2c0b-40bc-9cd1-5ff11ff74102',
+  appId: 'xxxxxxxxxx',
   scope: 'User.Read Mail.Send User.Read.All'
 };
